@@ -1,18 +1,11 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
+pd.options.display.max_rows = 9999
 df = pd.read_csv('file.csv')
 
-issue = input("put the athlete ID? ")
+id = input("put the athlete ID? ")
 
-issue_counts = df[df['Athlete ID']==issue]
+athlete_data = df[df['Athlete ID']==id]
 
-plt.bar(issue_counts.index, issue_counts.values, color='#2E75B6')
-plt.title('Number of Issues by Type', fontweight='bold')
-plt.xlabel('Issue Type')
-plt.ylabel('Count')
-plt.xticks(rotation=15)
-
-
-plt.tight_layout()
-plt.show()
+print(athlete_data)
